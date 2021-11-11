@@ -1,12 +1,18 @@
+#!/Users/christopher.ogbunuzor/.pyenv/shims/python
 apples = int(input("how many apples do you want"))
 unit = input("what unit shall i use? pls enter kg for kilograms, lb for pounds")
 #try:
-if unit == 'kg':
+if unit.lower() == 'kg':
     weight = apples/5
-elif unit == 'lb':
+elif unit.lower() == 'lb':
     weight= apples/2.2
 else:
-    print("You have to specify the right unit, pls enter kg or lb")
+    while unit.lower() not in ['kg', 'lb']:
+        unit = input("ensure you enter kg for kilograms, lb for pounds")
+        if unit.lower() == 'kg':
+            weight = apples/5
+        elif unit.lower() == 'lb':
+            weight= apples/2.2
 #except:
     #print("An exception occurred")
 
